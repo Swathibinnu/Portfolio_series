@@ -38,7 +38,7 @@ export default function ResumeSection({ onView }: { onView: () => void }) {
             <Magnetic className="w-full">
               <a
                 href={profile.resumePdf}
-                download="Sushmita_Dasari_Resume.pdf"
+                download={profile.resumeFileName}
                 data-cursor="link"
                 className="glass flex min-h-12 w-full items-center justify-center gap-2 rounded-md px-6 text-[15px] font-semibold text-bone transition hover:bg-white/15"
               >
@@ -103,10 +103,14 @@ export function ResumeSheet() {
           <a href={profile.links.linkedin} target="_blank" rel="noreferrer" className="hover:text-bone">
             LinkedIn ↗
           </a>
-          {' · '}
-          <a href={profile.links.github} target="_blank" rel="noreferrer" className="hover:text-bone">
-            GitHub ↗
-          </a>
+          {profile.links.github && (
+            <>
+              {' · '}
+              <a href={profile.links.github} target="_blank" rel="noreferrer" className="hover:text-bone">
+                GitHub ↗
+              </a>
+            </>
+          )}
         </div>
       </header>
 
@@ -117,7 +121,7 @@ export function ResumeSheet() {
             <div key={e.school} className="mb-4">
               <div className="flex flex-wrap justify-between gap-x-3">
                 <p className="text-sm font-semibold text-bone">
-                  {e.school}, {e.place}
+                  {e.school}
                 </p>
                 <p className="text-xs text-smoke">{e.period}</p>
               </div>
@@ -129,7 +133,7 @@ export function ResumeSheet() {
 
           <H>Work Experience</H>
           {experience.map((x) => (
-            <div key={x.company}>
+            <div key={`${x.role}-${x.period}`} className="mb-5">
               <div className="flex flex-wrap justify-between gap-x-3">
                 <p className="text-sm font-semibold text-bone">
                   {x.company} — {x.role}

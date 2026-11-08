@@ -1,6 +1,6 @@
-# SUSHMITA — THE SERIES
+# SWATHI — THE SERIES
 
-A cinematic, streaming-inspired portfolio for **Sushmita Dasari**: Full-Stack Developer and B.Tech AI & ML student.
+A cinematic, streaming-inspired portfolio for **Swathi Vanneladas**: AWS Certified Java Full-Stack Engineer at JPMorgan Chase.
 Every section is an episode, every project is an Original, and the whole site plays like a series.
 
 > A personal portfolio with a fictional streaming-platform look. It is not affiliated with Netflix or any other streaming service and uses none of their logos.
@@ -31,7 +31,7 @@ The static site is written to `dist/` and can be deployed as-is to Vercel, Netli
 
 | To change… | Edit |
 | --- | --- |
-| Name, intro, email, LinkedIn, GitHub | `profile` |
+| Name, intro, email, LinkedIn | `profile` |
 | A project, or a new one | `projects` (add an object; it appears in Originals, the overlay, the resume sheet and the counts) |
 | Achievements / certifications | `achievements`, `certifications` |
 | Skills and their "where it's used" notes | `skillCategories`, `skillEvidence` |
@@ -41,15 +41,15 @@ The static site is written to `dist/` and can be deployed as-is to Vercel, Netli
 | Profile order (Recruiter / Developer / Creative) | `viewerProfiles` |
 | Opening studio card text | `profile.originalLabel` |
 
-**Resume:** replace `public/assets/Sushmita_Dasari_Resume.pdf`.
+**Resume:** replace `public/assets/Swathi_Vanneladas_Resume.pdf`.
 
-**Photo:** replace `pic1.jpeg` (high-res photo) and `pic.png` (background-removed cutout with the same framing), then run:
+**Photo:** replace `public/assets/Swathi_Vanneladas_Photo.jpeg` with your portrait, then regenerate the responsive portraits and social share image with:
 
 ```bash
 npm run images
 ```
 
-This rebuilds the responsive WebP portraits and the social share image in `public/assets/`.
+This rebuilds the responsive photo assets and social share image in `public/assets/`.
 
 ## What's inside
 
@@ -58,7 +58,7 @@ src/
   data/portfolio.ts        ← single source of truth (from the resume)
   App.tsx                  ← stages: opening → profile select → home; overlays
   components/
-    OpeningSequence        ← black → studio card → SUSHMITA → THE SERIES → portrait → ▶ PLAY
+    OpeningSequence        ← black → studio card → SWATHI → THE SERIES → portrait → ▶ PLAY
     ProfileSelector        ← "Who's watching?" (changes section order only)
     Navbar                 ← hide-on-scroll nav, profile switcher, mobile menu
     Hero                   ← billboard: parallax portrait, particles, light streaks, floating chips
